@@ -1,0 +1,142 @@
+<mujoco model="gym2humanoid">
+
+    <option gravity="0 0 -9.81"/>
+
+    <worldbody>
+
+        <geom
+            name="floor"
+            type="plane"
+            size="5 5 0.1"
+            pos="0 0 0"
+        />
+
+        <body name="pelvis" pos="0 0 1.05">
+
+            <geom
+                name="pelvis_geom"
+                type="box"
+                size="0.16 0.10 0.10"
+            />
+
+            <geom
+                name="torso"
+                type="capsule"
+                fromto="0 0 0.10 0 0 0.65"
+                size="0.12"
+            />
+
+            <geom
+                name="head"
+                type="sphere"
+                pos="0 0 0.82"
+                size="0.11"
+            />
+
+            <body name="right_thigh" pos="0 -0.10 -0.08">
+
+                <joint
+                    name="right_hip"
+                    type="hinge"
+                    axis="0 1 0"
+                    range="-120 60"
+                />
+
+                <geom
+                    type="capsule"
+                    fromto="0 0 0 0 0 -0.40"
+                    size="0.07"
+                />
+
+                <body name="right_shin" pos="0 0 -0.40">
+
+                    <joint
+                        name="right_knee"
+                        type="hinge"
+                        axis="0 1 0"
+                        range="0 160"
+                    />
+
+                    <geom
+                        type="capsule"
+                        fromto="0 0 0 0 0 -0.38"
+                        size="0.06"
+                    />
+
+                    <body name="right_foot" pos="0 0 -0.38">
+
+                        <joint
+                            name="right_ankle"
+                            type="hinge"
+                            axis="0 1 0"
+                            range="-45 45"
+                        />
+
+                        <geom
+                            type="box"
+                            pos="0.08 0 -0.04"
+                            size="0.16 0.07 0.04"
+                        />
+
+                    </body>
+
+                </body>
+
+            </body>
+
+            <body name="left_thigh" pos="0 0.10 -0.08">
+
+                <joint
+                    name="left_hip"
+                    type="hinge"
+                    axis="0 1 0"
+                    range="-120 60"
+                />
+
+                <geom
+                    type="capsule"
+                    fromto="0 0 0 0 0 -0.40"
+                    size="0.07"
+                />
+
+                <body name="left_shin" pos="0 0 -0.40">
+
+                    <joint
+                        name="left_knee"
+                        type="hinge"
+                        axis="0 1 0"
+                        range="0 160"
+                    />
+
+                    <geom
+                        type="capsule"
+                        fromto="0 0 0 0 0 -0.38"
+                        size="0.06"
+                    />
+
+                    <body name="left_foot" pos="0 0 -0.38">
+
+                        <joint
+                            name="left_ankle"
+                            type="hinge"
+                            axis="0 1 0"
+                            range="-45 45"
+                        />
+
+                        <geom
+                            type="box"
+                            pos="0.08 0 -0.04"
+                            size="0.16 0.07 0.04"
+                        />
+
+                    </body>
+
+                </body>
+
+            </body>
+
+        </body>
+
+    </worldbody>
+
+</mujoco>

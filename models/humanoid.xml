@@ -13,6 +13,14 @@
 
         <body name="pelvis" pos="0 0 1.05">
 
+            <joint
+                name="pelvis_z"
+                type="slide"
+                axis="0 0 1"
+                range="-0.45 0.05"
+                damping="20"
+            />
+
             <geom
                 name="pelvis_geom"
                 type="box"
@@ -138,5 +146,19 @@
         </body>
 
     </worldbody>
+    
+    <actuator>
+    <position
+        name="pelvis_motor"
+        joint="pelvis_z"
+        kp="200"
+    />
+    <position name="right_hip_motor" joint="right_hip" kp="100"/>
+    <position name="right_knee_motor" joint="right_knee" kp="100"/>
+    <position name="right_ankle_motor" joint="right_ankle" kp="100"/>
 
+    <position name="left_hip_motor" joint="left_hip" kp="100"/>
+    <position name="left_knee_motor" joint="left_knee" kp="100"/>
+    <position name="left_ankle_motor" joint="left_ankle" kp="100"/>
+</actuator>
 </mujoco>
